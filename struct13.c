@@ -63,6 +63,7 @@ void read_csv() {
       strcpy(entry[5 * i + j].boro, borough[j]);
     }
   }
+  ch = strchr(ch, '\n') + 1;
   int out = open("./outfile", O_WRONLY | O_CREAT | O_TRUNC, 0777);
   write(out, entry, 5*count*sizeof(struct pop_entry));
 }
